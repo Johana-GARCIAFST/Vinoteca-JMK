@@ -1,0 +1,285 @@
+.formApp {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 70%;
+}
+
+.form h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 20px 0px 60px;
+}
+
+.formulario_Contacto {
+    width: 80%;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="documento"],
+input[type=password],
+textarea{
+    width: 90%;
+    height: 25px;
+    display: block;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: white;
+    resize: none;
+    outline: none;
+    padding: 7px;
+    border-style: none none solid;
+    border-image: initial;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+button[type="submit"] {
+    border: 2px solid black;
+    display: block;
+    font-size: 18px;
+    width: 100px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    margin: 20px 0px 0px 10px;
+    padding: 8px;
+}
+
+button:hover{
+    background-color: rgba(83, 139, 136, 0.822) !important;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: linear-gradient(to bottom, #474747, #000000);
+    margin: 15% auto;
+    padding-bottom: 20px;
+    border: 1px solid black;
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-content p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+
+#close {
+    cursor: pointer;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.app {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.app h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.app img {
+    width: 200px;
+    height: 200px;
+    margin: 30px 0px;
+}
+
+.sucursalM {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+.mapa aside {
+    margin-left: 80px;
+}
+
+.map-responsive{
+    width: 50%;
+    height: 350px;
+    overflow:hidden;
+    padding-bottom:35%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    top:0;
+    height:70%;
+    width:80%;
+    position:absolute;
+}
+
+.sucursal {
+    width: 50%;
+    margin-left: 120px;
+}
+
+.sucursal h1 {
+    font-size: 27px;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.sucursal ul {
+    list-style-type: none;
+    line-height: 35px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.lugar{
+    cursor: pointer;
+}
+
+.lugar:hover{
+    color: rgb(47, 47, 185);
+    text-decoration-line: underline;
+}
+
+@media screen and (max-width: 689px) {
+    .formApp {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100vw !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactanosTitulo{
+        font-size: 18px !important;
+    }
+
+    .app {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .app h1 {
+        font-size: 18px;
+    }
+
+    .app img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .sucursal {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .sucursalM {
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .mapa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+    }
+    .map-responsive{
+        width: 90vw;        
+        padding-bottom:95%;
+        position:relative;
+        height:0;
+    }
+
+    .map-responsive iframe{
+        top:0;
+        left: 0;
+        height:90%;
+        width:100%;
+        position:absolute;
+    }
+
+    .sucursal h1 {
+        width: 100vw;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .sucursal ul {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+input[type="email"]{
+    width: 70% !important;
+    margin-bottom: 10px;
+    margin-left: 0px !important;
+}
+}
+
+@media screen and (min-width: 690px) and (max-width: 1024px) {
+    
+}

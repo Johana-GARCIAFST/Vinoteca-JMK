@@ -1,0 +1,179 @@
+.seis{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.486);
+    display: none;
+    z-index: 10;
+}
+
+.ditailsContainer{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1000;
+    position: absolute;
+}
+
+.detallesDos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 10px rgba(0, 0, 0, 0.76);
+    border-radius: 10px;
+}
+
+.detalle-Producto{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-product{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-product img{
+    width: 300px;
+    height: 350px;
+    border: black solid 2px;
+}
+
+.t-detalle{
+    width: 100%;
+    height: 20%;
+}
+
+.t-detalle h1{
+    font-size: 35px;
+}
+
+.detalles-arrayProducto{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista-detalles{
+    width: 100%;
+    height: fit-content;
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+.lista-detalles li{
+    font-size: 16px;
+    line-height: 25px;
+    text-align: justify;
+    padding-right: 40px;
+    margin: 15px 0px;
+}
+
+.precioProducto{
+    width: 100%;
+    height: 15%;
+    font-size: 28px;
+    margin-top: 10px;
+    padding-right: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+
+button{
+    border: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: transparent;
+}
+
+@media screen and (max-width: 689px) {
+    .detallesDos{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .detalle-Producto{
+        width: 100%;
+        height: 30%;
+        flex-direction: row;
+    }
+
+    .img-product{
+        width: 50%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .img-product img{
+        width: 100%;
+        height: 160px;
+        border: black solid 2px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .t-detalle{
+        width: 50%;
+        height: 10%;
+    }
+    
+    .t-detalle h1{
+        font-size: 25px;
+    }
+    .detalles-arrayProducto{
+        width: 100%;
+        height: 70%;
+    }
+
+    .lista-detalles{
+        width: 100%;
+        height: fit-content;
+        margin-top: 10px;
+    }
+    
+    .lista-detalles li{
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px 10px;
+    }
+    
+    .precioProducto{
+        width: 100%;
+        height: 10%;
+        font-size: 15px;
+        margin-top: 1px;
+        padding-right: 20px;
+    }
+
+}
