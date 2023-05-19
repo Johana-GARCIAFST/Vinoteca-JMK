@@ -261,14 +261,14 @@ nav {
         position: absolute;
         cursor: pointer;
         right: 5%;
-        top: 54%;
+        top: 7%;
         transform: translate(-5%, -50%);
         z-index: 2;
         transition: all 0.7s ease;
     }
 
     nav {
-        position: fixed;
+        /* position: fixed; */
         z-index: 3;
     }
 
@@ -419,11 +419,11 @@ nav {
     }
 
     .imagen img{
-        margin-bottom: 250px;
+        margin-bottom: 168px;
     }
 
     nav {
-        position: fixed;
+        /* position: fixed; */
         z-index: 3;
     }
 
