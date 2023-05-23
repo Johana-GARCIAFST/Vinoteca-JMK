@@ -5,6 +5,18 @@
     align-items: center;
 }
 
+.ceroResultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55vh;
+}
+
+.sinEventos{
+    font-size: 28px;
+}
+
 #checkboxProductos {
     display: flex;
     flex-direction: row;

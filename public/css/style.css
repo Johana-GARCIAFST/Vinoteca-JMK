@@ -116,7 +116,7 @@ nav {
 
 .imagen {
     width: 22%;
-    margin: 0px 10px 50px 10px;
+    margin: 0px 10px 30px 10px;
 }
 
 .imagen img {
@@ -250,9 +250,19 @@ nav {
         height: 15vh;
     }
 
+    .search {
+        height: 20px;
+        margin-bottom: 50px;
+        margin-top: 8px;
+    }
+    
+    #search {
+        width: 250px;
+    }
+
     .imagen {
         width: 30%;
-        margin: 0px 10px;
+        margin: 8px 15px;
     }
 
     .hamburger {
@@ -260,20 +270,25 @@ nav {
         display: block;
         position: absolute;
         cursor: pointer;
-        right: 5%;
-        top: 7%;
+        right: 4%;
+        top: 3%;
         transform: translate(-5%, -50%);
         z-index: 2;
+        margin-top: 20px;
         transition: all 0.7s ease;
     }
 
     nav {
         /* position: fixed; */
+        align-items: flex-end;
         z-index: 3;
     }
 
     .navegacion{
         height: 100%;
+        align-items: flex-end;
+        margin-bottom: 0px;
+        margin-left: 20px;
     }
 
     .login {
@@ -281,13 +296,13 @@ nav {
     }
 
     .login i{
-        margin-bottom: 20px;
+        margin-bottom: 13px;
     }
 
     .nav-links {
         position: fixed;
         background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(24, 22, 22));
-        height: 70vh;
+        height: 60vh;
         width: 100%;
         flex-direction: column;
         clip-path: circle(50px at 90% -20%);
@@ -415,16 +430,21 @@ nav {
     }
 
     .login i{
-        margin-bottom: 200px;
+        width: fit-content;
+        margin-bottom: 10px;
+        margin-left: 900px;
+        font-size: 50px;
     }
 
     .imagen img{
-        margin-bottom: 168px;
+        margin-bottom: 68px;
+        height: 100px;
     }
 
     nav {
         /* position: fixed; */
         z-index: 3;
+        align-items: flex-end;
     }
 
     .hamburger {
@@ -438,10 +458,15 @@ nav {
         transition: all 0.7s ease;
     }
 
+    .hamburger div{
+        width: 50px;
+        height: 5px;
+    }
+
     .nav-links {
         position: fixed;
         background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(24, 22, 22));
-        height: 67vh;
+        height: 55vh;
         width: 100%;
         flex-direction: column;
         clip-path: circle(50px at 90% -20%);

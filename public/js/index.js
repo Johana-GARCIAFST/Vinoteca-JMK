@@ -709,32 +709,32 @@ pagInicio.addEventListener("click", e => {
 });
 
 
-let eliminarProducto = document.querySelector(".close")
-// rowProduct esta declarada en la global
-rowProduct.addEventListener('click', e => {
-    if (e.target.classList.contains('.icon-close')) {
-      let productoEliminar = e.target.parentElement;
-      let titulo = productoEliminar.querySelector('p').textContent;
+// let eliminarProducto = document.querySelector(".close")
+// // rowProduct esta declarada en la global
+// rowProduct.addEventListener('click', e => {
+//     if (e.target.classList.contains('.icon-close')) {
+//       let productoEliminar = e.target.parentElement;
+//       let titulo = productoEliminar.querySelector('p').textContent;
   
-      allProducts = allProducts.filter(
-        producto => producto.titulo !== titulo);
-  console.log(allProducts)
-      carritoFuncional();
-    }
-  });
+//       allProducts = allProducts.filter(
+//         producto => producto.titulo !== titulo);
+//   console.log(allProducts)
+//       carritoFuncional();
+//     }
+//   });
 
-  function carritoFuncional() {
-    if(!allProducts.length){
-        cartEmpty.classList.remove('hidden');
-		rowProduct.classList.add('hidden');
-		cartTotal.classList.add('hidden');
-    } else {
-		cartEmpty.classList.add('hidden');
-		rowProduct.classList.remove('hidden');
-		cartTotal.classList.remove('hidden');
-	}
-    carrito()
-}
+//   function carritoFuncional() {
+//     if(!allProducts.length){
+//         cartEmpty.classList.remove('hidden');
+// 		rowProduct.classList.add('hidden');
+// 		cartTotal.classList.add('hidden');
+//     } else {
+// 		cartEmpty.classList.add('hidden');
+// 		rowProduct.classList.remove('hidden');
+// 		cartTotal.classList.remove('hidden');
+// 	}
+//     carrito()
+// }
 
 // Función para mostrar el carrito
 function carrito() {
@@ -851,7 +851,7 @@ function filtrosCombinados() {
         ? display(filtrado)
         : (pagInicio.innerHTML = `
           <div class="ceroResultado">
-            <h1 class="sinEventos">No se encontró el arrayProducto buscado...</h1>
+            <h1 class="sinEventos">No se encontró el producto buscado...</h1>
           </div>
         `);
 }
