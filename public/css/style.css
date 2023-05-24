@@ -246,6 +246,21 @@ nav {
 }
 
 @media screen and (max-width: 689px) {
+
+    .copyright {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .copy a {
+        font-size: 14px;
+    }
+
+    footer{
+        height: 10vh;
+        flex-direction: column;
+    }
+
     header {
         height: 15vh;
     }
@@ -554,12 +569,13 @@ main {
 }
 
 footer {
-    width: 100%;
+    width: 100vw;
     height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
 }
 
 
@@ -631,4 +647,13 @@ footer {
     font-weight: bold;
     margin-right: 20px;
     color: black;
+}
+
+aside a{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    color: black;
+    font-weight: bold;
+    text-decoration-line: none;
 }

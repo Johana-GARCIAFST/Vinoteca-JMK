@@ -164,7 +164,13 @@ input[type=password] {
     border-style: none none solid;
     border-image: initial;
     border-bottom: 1px solid rgb(221, 221, 221);
-    margin-left: 50px;
+    text-align: center;
+}
+.selector-cantidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .subtotal {
