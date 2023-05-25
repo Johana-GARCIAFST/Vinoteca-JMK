@@ -21,6 +21,22 @@
     font-size: 28px;
 }
 
+.search {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 30px 20px;
+}
+
+#inputSearch {
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+
+}
+
 #checkboxProductos {
     display: flex;
     flex-direction: row;

@@ -5,6 +5,10 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+.fa-plus,
+.fa-minus{
+    cursor: pointer;
+}
 
 .count-products {
     position: absolute;
