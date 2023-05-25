@@ -260,8 +260,7 @@ button:hover {
     input[type="text"],
     input[type="tel"],
     input[type="documento"],
-    textarea,
-    input[type=password] {
+    textarea {
         margin-left: 5px;
         font-size: 14px;
     }
@@ -287,7 +286,7 @@ button:hover {
     }
 
     .cart-total span{
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .total h1 {
@@ -302,8 +301,6 @@ button:hover {
 
     input[type="email"],
     input[type="number"]{
-        width: 180px;
-        margin-left: 110px;
         font-size: 14px;
     }
 
@@ -323,6 +320,24 @@ button:hover {
         width: 80%;
         height: 19%;
         padding: 0px;
+    }
+
+    .eresSocio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .total{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .totalSocio{
+        text-align: center;
     }
 
 }
