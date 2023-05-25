@@ -5,14 +5,12 @@ function infoVinoteca() {
   let dataApi=[]
 coleccionVinos.get()
   .then((results) => {
-    console.log(results)
+  
     const data = results.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
     dataApi.push(...data)
-    console.log(dataApi.length);
-    
     arrayProductosApi = dataApi
 
     mostrarPage()
@@ -90,8 +88,6 @@ let direcciones = [
         mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43890.813249035265!2d-68.87663152123213!3d-32.885394911790314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e091c4d27b735%3A0x4dbe53d1205464cc!2sBodegas%20Y%20Vi%C3%B1edos%20Benedetti!5e0!3m2!1ses!2sar!4v1683828642957!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
     }
 ]
-
-console.log(recorridos);
 
 let carritoCompras = document.getElementById("carritoCompras")
 let allProducts = [];
