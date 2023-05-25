@@ -20,6 +20,9 @@
 .sinEventos{
     font-size: 28px;
 }
+.search{
+    display: flex !important;
+}
 
 .search {
     width: 100%;

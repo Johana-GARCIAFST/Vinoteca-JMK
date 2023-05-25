@@ -93,29 +93,21 @@ let direcciones = [
 
 console.log(recorridos);
 
-let cartInfo = document.querySelector(".cart-product")
-let rowProduct = document.querySelector(".row-product")
 let carritoCompras = document.getElementById("carritoCompras")
+let allProducts = [];
 let valorTotal = document.querySelector(".total-pagar")
 let busquedaSearch = document.getElementById("inputSearch")
 let searchContainer = document.getElementById("search")
 let contadorProductos = document.getElementById("contador-arrayProductos")
-//let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
-//let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
-let cartEmpty = document.querySelector(".cart-empty")
-let cartTotal = document.querySelector(".cart-total")
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
 
 hamburger.addEventListener('click', ()=>{
-   //Animate Links
     navLinks.classList.toggle("open");
     links.forEach(link => {
         link.classList.toggle("fade");
     });
-
-    //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
 
@@ -138,7 +130,6 @@ for (var i = 0; i < botonesNav.length; i++) {
     const elementos = botonesNav[i]
     elementos.addEventListener("click", function (e) {
         mostrarPage(e.target.id)
-        console.log(e.target.id)
     })
 }
 
@@ -201,7 +192,7 @@ function mostrarPage(id) {
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
             searchContainer.style.display = "flex"
-            
+            busquedaSearch.value =""
             pagInicio.style.display = "flex"
             display(vinos)
             arrayProductosVinoteca(vinos)
@@ -219,7 +210,7 @@ function mostrarPage(id) {
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
             searchContainer.style.display = "flex"
-            
+            busquedaSearch.value =""
             pagInicio.style.display = "flex"
             display(whisky)
             arrayProductosVinoteca(whisky)
@@ -407,6 +398,7 @@ function mostrarPage(id) {
             </div>
             <div class="carritoDos">
                     <div class="pagar">
+                    <h2 class="totalSocio" id="totalSocio">Total a pagar: $0</h2>
                         <div class="total">
                             <div id="totalDescuento">
                             </div>
@@ -418,7 +410,7 @@ function mostrarPage(id) {
                             <form class="form" id="datosCarrito">
                             <img src="#" alt="">
                             <label for="nombre"></label>
-                            <input type="text" name="nombre" placeholder="0000-0000-0000-0000" required>
+                            <input type="number" name="nombre" placeholder="0000-0000-0000-0000" required>
                             <label for="nombre"></label>
                             <input type="text" name="nombre" placeholder="Nombre" required>
                             <label for="date"></label>
@@ -566,6 +558,9 @@ function mostrarPage(id) {
             searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
+            document.getElementById("contador-productos").innerHTML = `
+    <span>${allProducts.length}</span>
+  `;
             display(oferta)
     }
 
@@ -636,7 +631,7 @@ function detalle(id) {
     })
 }
 
-let allProducts = [];
+
 let titulo 
 pagInicio.addEventListener("click", e => {
   if (e.target.classList.contains("add-cart")) {
@@ -662,6 +657,9 @@ pagInicio.addEventListener("click", e => {
       allProducts = [...allProducts, infProducto];
     }
 }
+document.getElementById("contador-productos").innerHTML = `
+    <span>${allProducts.length}</span>
+  `;
 
 });
 
@@ -676,17 +674,39 @@ function carrito() {
           <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
           <span class="precio-producto-carrito">${allProducts[i].precio}</span>
           <div class="selector-cantidad">
+          <i class="fa-solid fa-plus sumar-cantidad" onclick="sumarCantidad(${i})"></i>
             <input type="text" value="${allProducts[i].cantidad}" class="carrito-item-cantidad" disabled>
             <i class="fa-solid fa-minus restar-cantidad" onclick="restarCantidad(${i})"></i>
-            <i class="fa-solid fa-plus sumar-cantidad" onclick="sumarCantidad(${i})"></i>
+            
           </div>
           <button class="btn-eliminar" onclick="eliminarProducto(${i})"><i class="fa-solid fa-trash"></i></button>
         </div>
       `;
     }
     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
-  
-    sumarTotal();
+  let codigoSocio= document.getElementById("codigoSocio")
+  let totalAPagar= document.getElementById("totalSocio")
+
+  let valor= sumarTotal();
+  codigoSocio.style.border="3px solid red"
+  totalAPagar.innerHTML= `
+  Total a pagar: $${valor}
+  `
+    codigoSocio.addEventListener("keyup", function(e){
+
+       if(e.target.value.length==10){
+        codigoSocio.style.border="3px solid green"
+        totalAPagar.innerHTML=`
+        Total a pagar: $${valor*0.85}
+        `
+       } 
+       else{
+        codigoSocio.style.border="3px solid red"
+        totalAPagar.innerHTML=`
+        Total a pagar: $${valor}
+        `
+       }
+    })
   }
   
   function sumarCantidad(index) {
@@ -726,11 +746,12 @@ function sumarTotal() {
     <span>${totalProductos}</span>
   `;
   contadorProductos += totalProductos;
+  return totalPagar
 }
 
 
 
-searchContainer.addEventListener("keyup", function (e) {
+busquedaSearch.addEventListener("keyup", function (e) {
     var datoInput = e.target.value
     buscar = datoInput.trim().toLowerCase()
     filtrosCombinados()
